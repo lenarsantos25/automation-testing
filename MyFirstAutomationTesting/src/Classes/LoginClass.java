@@ -20,10 +20,8 @@ public class LoginClass {
 			Thread.sleep(2000);
 			driver.findElement(By.id("sso-login-email-input")).sendKeys("sample");
 			driver.findElement(By.id("sso-login-password-input")).sendKeys("password");
-			//show password
 			Thread.sleep(1000);
-			driver.findElement(By.cssSelector("mat-icon[class*='mat-icon]'")).click();
-//			driver.findElement(By.className("sso-button")).click();
+			driver.findElement(By.className("sso-button")).click();
 			// Button Click
 		} else {
 			driver.findElement(By.id("loginModal")).click();
