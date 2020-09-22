@@ -1,18 +1,19 @@
+package Practice;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-import Classes.LoginClass;
-import Classes.MyBookingsClass;
-import Classes.CheckInClass;
-import Classes.FlightStatus;
+import Base.CheckInClass;
+import Base.FlightStatus;
+import Base.LoginClass;
+import Base.MyBookingsClass;
 
 public class Main {
 
 	public static void main(String[] args) throws InterruptedException {
 		// TODO Auto-generated method stub
 		String baseURL = "https://www.airasia.com/en/gb";
-		System.setProperty("webdriver.chrome.driver", "D:\\Test\\chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver", "E:\\ChromeDriver\\chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.get(baseURL);
