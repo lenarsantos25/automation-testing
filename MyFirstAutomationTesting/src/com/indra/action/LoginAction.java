@@ -2,6 +2,7 @@ package com.indra.action;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -10,76 +11,67 @@ import com.indra.model.LoginModel;
 public class LoginAction extends LoginModel {
 
 	WebDriver driver;
-	WebElement popUpLoginButton, popUpAllowButton, forgotPassLinkText;
 
 	public LoginAction(WebDriver driver) {
 		this.driver = driver;
+		PageFactory.initElements(driver, this);
 	}
 
 	private void inputUsernameAndPassword(String username, String password) {
-		WebElement usernameElement = driver.findElement(usernameId);
-		usernameElement.sendKeys(username);
-
-		WebElement passwordElement = driver.findElement(passwordId);
-		passwordElement.sendKeys(password);
-	}
-
-	private void clickButton(WebElement element) {
-		element.click();
-	}
-
-	private void inputEmail(WebElement element, String email) {
-		element.sendKeys(email);
+		usernameId.sendKeys(username);
+		passwordId.sendKeys(password);
 	}
 
 	public void LoginAirasia(String username, String pass) {
-		WaitUntilTheElementIsVisible(driver.findElement(buttonTop), 10);
-		popUpLoginButton = driver.findElement(buttonTop);
-		if (!popUpLoginButton.isDisplayed()) {
-			driver.findElement(loginSignUpButton).click();
+		WaitUntilTheElementIsVisible(buttonTop, 10);
+		if (!buttonTop.isDisplayed()) {
+			loginSignUpButton.click();
 		} else {
-			popUpLoginButton.click();
+			buttonTop.click();
 
 		}
 
-		WaitUntilTheElementIsVisible(driver.findElement(allowBtnId), 10);
-		popUpAllowButton = driver.findElement(allowBtnId);
-		if (!popUpAllowButton.isDisplayed()) {
+		WaitUntilTheElementIsVisible(allowBtnId, 10);
+		if (!allowBtnId.isDisplayed()) {
 			this.inputUsernameAndPassword(username, pass);
-			this.clickButton(driver.findElement(loginButton));
+			ClickAction(loginButton);
 		} else {
-			popUpAllowButton.click();
+			allowBtnId.click();
 			this.inputUsernameAndPassword(username, pass);
-			this.clickButton(driver.findElement(loginButton));
+			ClickAction(loginButton);
 		}
 
 	}
 
 	public void ForgotPassword() {
-		WaitUntilTheElementIsVisible(driver.findElement(buttonTop), 10);
-		popUpLoginButton = driver.findElement(buttonTop);
-		if (!popUpLoginButton.isDisplayed()) {
-			driver.findElement(loginSignUpButton).click();
+		WaitUntilTheElementIsVisible(buttonTop, 10);
+		if (!buttonTop.isDisplayed()) {
+			loginSignUpButton.click();
 		} else {
-			popUpLoginButton.click();
+			buttonTop.click();
 
 		}
 
-		WaitUntilTheElementIsVisible(driver.findElement(allowBtnId), 10);
-		popUpAllowButton = driver.findElement(allowBtnId);
-		if (!popUpAllowButton.isDisplayed()) {
-			forgotPassLinkText = driver.findElement(forgotPassLink);
-			forgotPassLinkText.click();
+		WaitUntilTheElementIsVisible(allowBtnId, 10);
+		if (!allowBtnId.isDisplayed()) {
+			ClickAction(forgotPassLink);
 		} else {
-			popUpAllowButton.click();
-			forgotPassLinkText = driver.findElement(forgotPassLink);
-			forgotPassLinkText.click();
+			allowBtnId.click();
+			ClickAction(forgotPassLink);
 
-			WaitUntilTheElementIsVisible(driver.findElement(forgotEmail), 5);
-			inputEmail(driver.findElement(forgotEmail), "test@gmail.com");
-			this.clickButton(driver.findElement(loginButton));
+			WaitUntilTheElementIsVisible(forgotEmail, 5);
+			InputAction(forgotEmail, "test@gmail.com");
+			ClickAction(loginButton);
 		}
 
+	}
+
+	private void ClickAction(WebElement element) {
+		element.click();
+	}
+
+	private void InputAction(WebElement element, String keys) {
+		element.sendKeys(keys);
 	}
 
 	private void WaitUntilTheElementIsVisible(WebElement element, int timeOut) {

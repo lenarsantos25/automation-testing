@@ -1,0 +1,39 @@
+package com.indra.model;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+
+public class MyBookingsModel {
+
+	@FindBy(linkText="My bookings")
+	public WebElement myBookingsLinkText;
+	
+	@FindBy(id="input-lastName")
+	public WebElement lastName;
+	
+	@FindBy(css="button[class='btn aasbw-button")
+	public WebElement submitBtn;
+	
+	// FlightTab
+	@FindBy(id="input-depCity")
+	public WebElement departureCity;
+	
+	@FindBy(xpath="//div[@id='mat-autocomplete-0']//mat-option[@id='mat-option-3']")
+	public WebElement departureComboBox;
+	
+	@FindBy(id="input-pnr")
+	public WebElement bookingNumber;
+
+	
+	// HotelTab
+	@FindBy(xpath="//div[@id='tabs-container']//div[2]")
+	public WebElement hotelTab;
+	
+	@FindBy(id="input-orderNumber")
+	public WebElement orderNumber;
+	
+	@FindBy(id="input-email")
+	public WebElement emailAddress;
+}
+

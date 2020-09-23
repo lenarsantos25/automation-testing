@@ -1,18 +1,35 @@
 package com.indra.model;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 
 public class LoginModel {
 	
-	public By loginSignUpButton = By.id("loginModal");
-	public By buttonTop = By.className("buttontop");
-	public By allowBtnId = By.id("wzrk-confirm");
+	@FindBy(id="loginModal")
+	public WebElement loginSignUpButton;
 	
-	public By usernameId = By.id("sso-login-email-input");
-	public By passwordId = By.id("sso-login-password-input");
-	public By loginButton = By.className("sso-button");
+	@FindBy(className="buttontop")
+	public WebElement buttonTop;
 	
-	public By forgotEmail = By.id("sso-forgot-password-email-input");
-	public By forgotPassLink = By.linkText("Forgot password?");
+	@FindBy(id="wzrk-confirm")
+	public WebElement allowBtnId;
 	
+	@FindBy(id="sso-login-email-input")
+	public WebElement usernameId;
+	
+	@FindBy(id="sso-login-password-input")
+	public WebElement passwordId;
+	
+	@FindBy(className="sso-button")
+	public WebElement loginButton;
+	
+	@FindBy(id="sso-forgot-password-email-input")
+	public WebElement forgotEmail;
+	
+	@FindBy(linkText="Forgot password?")
+	public WebElement forgotPassLink;
+	
+	
+
 }
