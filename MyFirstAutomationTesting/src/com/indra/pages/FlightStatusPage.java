@@ -29,6 +29,7 @@ public class FlightStatusPage {
 
 	@BeforeMethod
 	public void LaunchURL() {
+		options.addArguments("--disable-notifications");
 		driver = new ChromeDriver(options);
 		driver.manage().window().maximize();
 		driver.get(baseURL);

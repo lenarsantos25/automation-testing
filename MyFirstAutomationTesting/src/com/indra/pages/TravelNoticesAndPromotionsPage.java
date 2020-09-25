@@ -17,6 +17,7 @@ import com.indra.action.TravelNoticesAndPromotionsAction;
 public class TravelNoticesAndPromotionsPage {
 	WebDriver driver;
 	ChromeOptions options;
+	
 	String baseURL = "https://www.airasia.com/en/gb";
 	String path = "E:\\ChromeDriver\\chromedriver.exe";
 
@@ -29,6 +30,7 @@ public class TravelNoticesAndPromotionsPage {
 
 	@BeforeMethod
 	public void LaunchURL() {
+		options.addArguments("--disable-notifications");
 		driver = new ChromeDriver(options);
 		driver.manage().window().maximize();
 		driver.get(baseURL);
