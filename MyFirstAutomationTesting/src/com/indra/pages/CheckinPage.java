@@ -4,6 +4,7 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
@@ -16,6 +17,7 @@ import com.indra.action.LoginAction;
 
 public class CheckinPage {
 	WebDriver driver;
+	ChromeOptions options;
 	String baseURL = "https://www.airasia.com/en/gb";
 	String path = "E:\\ChromeDriver\\chromedriver.exe";
 
@@ -27,8 +29,8 @@ public class CheckinPage {
 	}
 
 	@BeforeMethod
-	public void beforeMethod() {
-		driver = new ChromeDriver();
+	public void LaunchURL() {
+		driver = new ChromeDriver(options);
 		driver.manage().window().maximize();
 		driver.get(baseURL);
 		driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
@@ -43,12 +45,13 @@ public class CheckinPage {
 	}
 	
 	@AfterMethod
-	public void QuitDriver() {
+	public void CloseTabs() {
 		driver.close();
+		driver.quit();
 	}
 
 	@AfterTest
-	public void QuitTest() {
+	public void ExitDriver() {
 		driver.quit();
 	}
 }

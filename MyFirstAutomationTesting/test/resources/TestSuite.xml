@@ -6,6 +6,9 @@
 		<classes>
 			<class name="com.indra.pages.LoginPage"></class>
 			<class name="com.indra.pages.MyBookingsPage"></class>
+			<class name="com.indra.pages.CheckinPage"></class>
+			<class name="com.indra.pages.FlightStatusPage"></class>
+			<class name="com.indra.pages.SupportPage"></class>
 		</classes>
 	</test>
 
