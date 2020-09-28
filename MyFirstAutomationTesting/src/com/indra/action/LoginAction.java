@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.indra.model.LoginModel;
@@ -17,9 +18,17 @@ public class LoginAction extends LoginModel {
 		PageFactory.initElements(driver, this);
 	}
 
-	private void inputUsernameAndPassword(String username, String password) {
-		usernameId.sendKeys(username);
-		passwordId.sendKeys(password);
+	public void SignUpAirasia(String email, String password) {
+		WaitUntilTheElementIsVisible(buttonTop, 10);
+		if (!buttonTop.isDisplayed()) {
+			loginSignUpButton.click();
+		} else {
+			buttonTop.click();
+		}
+		ClickAction(signupTab);
+		emailId.sendKeys(email);
+		passId.sendKeys(password);
+		ClickAction(signupButton);
 	}
 
 	public void LoginAirasia(String username, String pass) {
@@ -28,19 +37,9 @@ public class LoginAction extends LoginModel {
 			loginSignUpButton.click();
 		} else {
 			buttonTop.click();
-
 		}
-
-		WaitUntilTheElementIsVisible(allowBtnId, 10);
-		if (!allowBtnId.isDisplayed()) {
-			this.inputUsernameAndPassword(username, pass);
-			ClickAction(loginButton);
-		} else {
-			allowBtnId.click();
-			this.inputUsernameAndPassword(username, pass);
-			ClickAction(loginButton);
-		}
-
+		inputUsernameAndPassword(username, pass);
+		ClickAction(loginButton);
 	}
 
 	public void ForgotPassword() {
@@ -52,18 +51,53 @@ public class LoginAction extends LoginModel {
 
 		}
 
-		WaitUntilTheElementIsVisible(allowBtnId, 10);
-		if (!allowBtnId.isDisplayed()) {
-			ClickAction(forgotPassLink);
+		ClickAction(forgotPassLink);
+
+		WaitUntilTheElementIsVisible(forgotEmail, 5);
+		InputAction(forgotEmail, "test@gmail.com");
+		ClickAction(loginButton);
+
+	}
+
+	public void LoginWithFacebook() {
+		WaitUntilTheElementIsVisible(buttonTop, 10);
+		if (!buttonTop.isDisplayed()) {
+			loginSignUpButton.click();
 		} else {
-			allowBtnId.click();
-			ClickAction(forgotPassLink);
+			buttonTop.click();
 
-			WaitUntilTheElementIsVisible(forgotEmail, 5);
-			InputAction(forgotEmail, "test@gmail.com");
-			ClickAction(loginButton);
 		}
+		ClickAction(loginWithFacebook);
 
+	}
+
+	public void LoginWithGoogle() {
+		WaitUntilTheElementIsVisible(buttonTop, 10);
+		if (!buttonTop.isDisplayed()) {
+			loginSignUpButton.click();
+		} else {
+			buttonTop.click();
+
+		}
+		ClickAction(loginWithGoogle);
+
+	}
+
+	public void LoginWithWeChat() {
+		WaitUntilTheElementIsVisible(buttonTop, 10);
+		if (!buttonTop.isDisplayed()) {
+			loginSignUpButton.click();
+		} else {
+			buttonTop.click();
+
+		}
+		ClickAction(loginWithWeChat);
+
+	}
+
+	private void inputUsernameAndPassword(String username, String password) {
+		usernameId.sendKeys(username);
+		passwordId.sendKeys(password);
 	}
 
 	private void ClickAction(WebElement element) {
@@ -78,5 +112,4 @@ public class LoginAction extends LoginModel {
 		WebDriverWait wait = new WebDriverWait(driver, timeOut);
 		wait.until(ExpectedConditions.visibilityOf(element));
 	}
-
 }

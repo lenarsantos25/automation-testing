@@ -3,15 +3,16 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.indra.pages.TravelNoticesAndPromotionsPage">
+      <class name="com.indra.pages.FlightStatusPage">
         <methods>
+          <include name="ExitDriver"/>
+          <include name="CloseTabs"/>
+          <include name="LaunchURL"/>
+          <include name="SearchByFlightNumber"/>
           <include name="Setup"/>
-          <include name="QuitTest"/>
-          <include name="QuitDriver"/>
-          <include name="FirstPromotionPage"/>
-          <include name="beforeMethod"/>
+          <include name="SearchByDestination"/>
         </methods>
-      </class> <!-- com.indra.pages.TravelNoticesAndPromotionsPage -->
+      </class> <!-- com.indra.pages.FlightStatusPage -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

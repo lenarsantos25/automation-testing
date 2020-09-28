@@ -19,7 +19,6 @@ public class TravelNoticesAndPromotionsAction extends TravelNoticesAndPromotions
 	}
 
 	public void FirstPromotion() {
-
 		String parent = driver.getWindowHandle();
 		ClickAction(firstCard);
 		CommonCodes(parent);
@@ -29,15 +28,6 @@ public class TravelNoticesAndPromotionsAction extends TravelNoticesAndPromotions
 		CommonCodes(parent);
 		ClickAction(fourthCard);
 		CommonCodes(parent);
-		ClickAction(secondPageButton);
-		ClickAction(fifthCard);
-		CommonCodes(parent);
-		ClickAction(sixthCard);
-		CommonCodes(parent);
-		ClickAction(seventhCard);
-		CommonCodes(parent);
-		ClickAction(eightCard);
-
 	}
 
 	private void ClickAction(WebElement element) {
@@ -53,8 +43,4 @@ public class TravelNoticesAndPromotionsAction extends TravelNoticesAndPromotions
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 	}
 
-	private void WaitUntilTheElementIsVisible(WebElement element, int timeOut) {
-		WebDriverWait wait = new WebDriverWait(driver, timeOut);
-		wait.until(ExpectedConditions.visibilityOf(element));
-	}
 }

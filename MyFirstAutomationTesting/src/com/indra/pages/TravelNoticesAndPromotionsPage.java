@@ -1,5 +1,7 @@
 package com.indra.pages;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
@@ -17,7 +19,6 @@ import com.indra.action.TravelNoticesAndPromotionsAction;
 public class TravelNoticesAndPromotionsPage {
 	WebDriver driver;
 	ChromeOptions options;
-	
 	String baseURL = "https://www.airasia.com/en/gb";
 	String path = "E:\\ChromeDriver\\chromedriver.exe";
 
@@ -26,11 +27,14 @@ public class TravelNoticesAndPromotionsPage {
 	@BeforeTest
 	public void Setup() {
 		System.setProperty("webdriver.chrome.driver", path);
+		Map<String, Object> prefs = new HashMap<String, Object>();
+		prefs.put("profile.default_content_setting_values.notifications", 2);
+		options = new ChromeOptions();
+		options.setExperimentalOption("prefs", prefs);
 	}
 
 	@BeforeMethod
 	public void LaunchURL() {
-		options.addArguments("--disable-notifications");
 		driver = new ChromeDriver(options);
 		driver.manage().window().maximize();
 		driver.get(baseURL);

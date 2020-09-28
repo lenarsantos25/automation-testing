@@ -29,9 +29,9 @@ public class FlightStatusAction extends FlightStatusModel{
 		CommonCodes();
 		ClickAction(searchByRouteTab);
 		ClickAction(originRoute);
-		InputAction(originRoute, "a");
-		WaitUntilTheElementIsVisible(labelText, 2);
 		ClickAction(labelText);
+		ClickAction(labelText);
+		ClickAction(routeSearchButton);
 	}
 	
 	private void CommonCodes() {

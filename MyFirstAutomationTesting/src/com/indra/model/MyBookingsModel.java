@@ -35,5 +35,18 @@ public class MyBookingsModel {
 	
 	@FindBy(id="input-email")
 	public WebElement emailAddress;
+	
+	// Retrieve
+	@FindBy(linkText="Retrieve booking")
+	public WebElement retrieveLinkText;
+	
+	@FindBy(id="unified-itin-emailId")
+	public WebElement retrieveEmailId;
+	
+	@FindBy(id="unified-itin-password")
+	public WebElement retrievePassId;
+	
+	@FindBy(id="unified-itin-submit-button")
+	public WebElement submitButtonId;
 }
 

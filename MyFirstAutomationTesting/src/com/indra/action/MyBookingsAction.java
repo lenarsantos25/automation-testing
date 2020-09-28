@@ -37,6 +37,13 @@ public class MyBookingsAction extends MyBookingsModel {
 		ClickAction(submitBtn);
 	}
 	
+	public void RetrieveBooking() {
+		CommonCodes();
+		ClickAction(retrieveLinkText);
+		InputAction(retrieveEmailId, "test@gmail.com");
+		InputAction(retrievePassId, "password123");
+		ClickAction(submitButtonId);
+	}
 	private void CommonCodes() {
 		ClickAction(myBookingsLinkText);
 		driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);

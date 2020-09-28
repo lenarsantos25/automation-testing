@@ -1,5 +1,7 @@
 package com.indra.pages;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
@@ -25,11 +27,14 @@ public class FlightStatusPage {
 	@BeforeTest
 	public void Setup() {
 		System.setProperty("webdriver.chrome.driver", path);
+		Map<String, Object> prefs = new HashMap<String, Object>();
+		prefs.put("profile.default_content_setting_values.notifications", 2);
+		options = new ChromeOptions();
+		options.setExperimentalOption("prefs", prefs);
 	}
 
 	@BeforeMethod
 	public void LaunchURL() {
-		options.addArguments("--disable-notifications");
 		driver = new ChromeDriver(options);
 		driver.manage().window().maximize();
 		driver.get(baseURL);
@@ -43,12 +48,12 @@ public class FlightStatusPage {
 		flightStatusAction.SearchFlightNumber();
 	}
 
-//	@Test(priority=2)
-//	public void SearchByDestination() {
-//		flightStatusAction = new FlightStatusAction(driver);
-//		PageFactory.initElements(driver, FlightStatusPage.class);
-//		flightStatusAction.SearchByRoute();
-//	}
+	@Test(priority=2)
+	public void SearchByDestination() {
+		flightStatusAction = new FlightStatusAction(driver);
+		PageFactory.initElements(driver, FlightStatusPage.class);
+		flightStatusAction.SearchByRoute();
+	}
 
 	@AfterMethod
 	public void CloseTabs() {

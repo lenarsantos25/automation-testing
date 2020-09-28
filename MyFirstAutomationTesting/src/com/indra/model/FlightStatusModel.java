@@ -22,8 +22,11 @@ public class FlightStatusModel {
 	@FindBy(id="origin-autocomplete")
 	public WebElement originRoute;
 	
-	@FindBy(xpath="//aa-option[@id='aa-option-172']/div")
+	@FindBy(xpath="(//div[@class='dropdown-container']/ul/aa-option/div)[2]")
 	public WebElement labelText;
+	
+	@FindBy(xpath="(//div[@class='container']/button)[2]")
+	public WebElement routeSearchButton;
 	
 	@FindBy(id="dest-autocomplete")
 	public WebElement destRoute;

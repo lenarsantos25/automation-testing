@@ -30,6 +30,24 @@ public class LoginModel {
 	@FindBy(linkText="Forgot password?")
 	public WebElement forgotPassLink;
 	
+	@FindBy(xpath="(//div[@class='sso-social-item']/button)[1]")
+	public WebElement loginWithFacebook;
 	
-
+	@FindBy(xpath="(//div[@class='sso-social-item']/button)[2]")
+	public WebElement loginWithGoogle;
+	
+	@FindBy(xpath="(//div[@class='sso-social-item']/button)[3]")
+	public WebElement loginWithWeChat;
+	
+	@FindBy(xpath="(//div[@class='tab-header']/ul/li)[2]")
+	public WebElement signupTab;
+	
+	@FindBy(id="sso-signup-email-input")
+	public WebElement emailId;
+	
+	@FindBy(id="sso-signup-password-input")
+	public WebElement passId;
+	
+	@FindBy(xpath="(//button[@class='sso-button'])[2]")
+	public WebElement signupButton;
 }

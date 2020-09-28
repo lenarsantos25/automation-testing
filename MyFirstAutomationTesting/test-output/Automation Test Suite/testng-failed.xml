@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Automation Test Suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name=" Screen 1 Scenarios(failed)">
+    <classes>
+      <class name="com.indra.pages.LoginPage">
+        <methods>
+          <include name="LaunchURL"/>
+          <include name="Setup"/>
+          <include name="LoginAsGoogle"/>
+          <include name="LoginPages"/>
+          <include name="ForgotPassword"/>
+          <include name="LoginAsWeChat"/>
+          <include name="LoginAsFacebook"/>
+          <include name="CloseTabs"/>
+          <include name="ExitDriver"/>
+        </methods>
+      </class> <!-- com.indra.pages.LoginPage -->
+      <class name="com.indra.pages.SupportPage">
+        <methods>
+          <include name="SupportPages"/>
+          <include name="ExitDriver"/>
+          <include name="CloseTabs"/>
+          <include name="Setup"/>
+          <include name="LaunchURL"/>
+        </methods>
+      </class> <!-- com.indra.pages.SupportPage -->
+      <class name="com.indra.pages.FlightStatusPage">
+        <methods>
+          <include name="CloseTabs"/>
+          <include name="ExitDriver"/>
+          <include name="LaunchURL"/>
+          <include name="SearchByFlightNumber"/>
+          <include name="Setup"/>
+        </methods>
+      </class> <!-- com.indra.pages.FlightStatusPage -->
+      <class name="com.indra.pages.CheckinPage">
+        <methods>
+          <include name="Setup"/>
+          <include name="CloseTabs"/>
+          <include name="ExitDriver"/>
+          <include name="CheckinPages"/>
+          <include name="LaunchURL"/>
+        </methods>
+      </class> <!-- com.indra.pages.CheckinPage -->
+      <class name="com.indra.pages.MyBookingsPage">
+        <methods>
+          <include name="Setup"/>
+          <include name="LaunchURL"/>
+          <include name="CloseTabs"/>
+          <include name="ExitDriver"/>
+          <include name="FlightTabPage"/>
+          <include name="HotelTabPage"/>
+        </methods>
+      </class> <!-- com.indra.pages.MyBookingsPage -->
+    </classes>
+  </test> <!--  Screen 1 Scenarios(failed) -->
+</suite> <!-- Failed suite [Automation Test Suite] -->
