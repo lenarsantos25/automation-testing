@@ -48,6 +48,41 @@ public class AirAsiaHomePage {
 		airasiaHomeAction.Flights();
 	}
 	
+	@Test(priority=2)
+	public void HotelsTab() {
+		airasiaHomeAction = new AirAsiaHomeAction(driver);
+		PageFactory.initElements(driver, AirAsiaHomePage.class);
+		airasiaHomeAction.Hotels();
+	}
+	
+	@Test(priority=3)
+	public void SnapTab() {
+		airasiaHomeAction = new AirAsiaHomeAction(driver);
+		PageFactory.initElements(driver, AirAsiaHomePage.class);
+		airasiaHomeAction.Snap();
+	}
+	
+	@Test(priority=4)
+	public void ShopTab() {
+		airasiaHomeAction = new AirAsiaHomeAction(driver);
+		PageFactory.initElements(driver, AirAsiaHomePage.class);
+		airasiaHomeAction.Shop();
+	}
+	
+	@Test(priority=5)
+	public void ActivitesTab() {
+		airasiaHomeAction = new AirAsiaHomeAction(driver);
+		PageFactory.initElements(driver, AirAsiaHomePage.class);
+		airasiaHomeAction.Activites();
+	}
+	
+	@Test(priority=6)
+	public void InsuranceTab() {
+		airasiaHomeAction = new AirAsiaHomeAction(driver);
+		PageFactory.initElements(driver, AirAsiaHomePage.class);
+		airasiaHomeAction.Insurance();
+	}
+	
 	@AfterMethod
 	public void CloseTabs() {
 		driver.close();

@@ -3,16 +3,15 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.indra.pages.FlightStatusPage">
+      <class name="com.indra.pages.AirAsiaHomePage">
         <methods>
           <include name="ExitDriver"/>
           <include name="CloseTabs"/>
-          <include name="LaunchURL"/>
-          <include name="SearchByFlightNumber"/>
           <include name="Setup"/>
-          <include name="SearchByDestination"/>
+          <include name="HotelsTab"/>
+          <include name="LaunchURL"/>
         </methods>
-      </class> <!-- com.indra.pages.FlightStatusPage -->
+      </class> <!-- com.indra.pages.AirAsiaHomePage -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
