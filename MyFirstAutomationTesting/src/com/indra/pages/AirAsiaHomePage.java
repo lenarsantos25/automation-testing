@@ -14,15 +14,15 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-import com.indra.action.MyBookingsAction;
+import com.indra.action.AirAsiaHomeAction;
 
-public class MyBookingsPage {
+public class AirAsiaHomePage {
 	WebDriver driver;
 	ChromeOptions options;
 	String baseURL = "https://www.airasia.com/en/gb";
 	String path = "E:\\ChromeDriver\\chromedriver.exe";
 
-	MyBookingsAction mybookingsAction;
+	AirAsiaHomeAction airasiaHomeAction;
 
 	@BeforeTest
 	public void Setup() {
@@ -41,34 +41,16 @@ public class MyBookingsPage {
 		driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
 	}
 	
-	@Test (priority=1)
-	public void  FlightTabPage() {
-		mybookingsAction = new MyBookingsAction(driver);
-		PageFactory.initElements(driver, MyBookingsPage.class);
-		mybookingsAction.FlightTab();
-		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-	}
-	
-	@Test (priority=2)
-	public void HotelTabPage() {
-		mybookingsAction = new MyBookingsAction(driver);
-		PageFactory.initElements(driver, MyBookingsPage.class);
-		mybookingsAction.HotelTab();
-		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-	}
-	
-	@Test (priority=3)
-	public void RetrievePage() {
-		mybookingsAction = new MyBookingsAction(driver);
-		PageFactory.initElements(driver, MyBookingsPage.class);
-		mybookingsAction.RetrieveBooking();
-		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+	@Test(priority=1)
+	public void FlightsTab() {
+		airasiaHomeAction = new AirAsiaHomeAction(driver);
+		PageFactory.initElements(driver, AirAsiaHomePage.class);
+		airasiaHomeAction.Flights();
 	}
 	
 	@AfterMethod
 	public void CloseTabs() {
 		driver.close();
-		driver.quit();
 	}
 
 	@AfterTest

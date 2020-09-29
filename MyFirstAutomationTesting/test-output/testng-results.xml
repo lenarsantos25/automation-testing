@@ -1,45 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2020-09-28T10:25:56 PST" name="Default suite" finished-at="2020-09-28T10:26:28 PST" duration-ms="31908">
+  <suite started-at="2020-09-28T10:44:41 PST" name="Default suite" finished-at="2020-09-28T10:44:59 PST" duration-ms="18531">
     <groups>
     </groups>
-    <test started-at="2020-09-28T10:25:56 PST" name="Default test" finished-at="2020-09-28T10:26:28 PST" duration-ms="31908">
-      <class name="com.indra.pages.FlightStatusPage">
-        <test-method is-config="true" signature="Setup()[pri:0, instance:com.indra.pages.FlightStatusPage@25d250c6]" started-at="2020-09-28T10:25:56 PST" name="Setup" finished-at="2020-09-28T10:25:56 PST" duration-ms="17" status="PASS">
+    <test started-at="2020-09-28T10:44:41 PST" name="Default test" finished-at="2020-09-28T10:44:59 PST" duration-ms="18531">
+      <class name="com.indra.pages.AirAsiaHomePage">
+        <test-method is-config="true" signature="Setup()[pri:0, instance:com.indra.pages.AirAsiaHomePage@45b9a632]" started-at="2020-09-28T10:44:41 PST" name="Setup" finished-at="2020-09-28T10:44:41 PST" duration-ms="15" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Setup -->
-        <test-method is-config="true" signature="LaunchURL()[pri:0, instance:com.indra.pages.FlightStatusPage@25d250c6]" started-at="2020-09-28T10:25:56 PST" name="LaunchURL" finished-at="2020-09-28T10:26:06 PST" duration-ms="9844" status="PASS">
+        <test-method is-config="true" signature="LaunchURL()[pri:0, instance:com.indra.pages.AirAsiaHomePage@45b9a632]" started-at="2020-09-28T10:44:41 PST" name="LaunchURL" finished-at="2020-09-28T10:44:54 PST" duration-ms="13236" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- LaunchURL -->
-        <test-method signature="SearchByFlightNumber()[pri:1, instance:com.indra.pages.FlightStatusPage@25d250c6]" started-at="2020-09-28T10:26:06 PST" name="SearchByFlightNumber" finished-at="2020-09-28T10:26:10 PST" duration-ms="4127" status="PASS">
+        <test-method signature="FlightsTab()[pri:1, instance:com.indra.pages.AirAsiaHomePage@45b9a632]" started-at="2020-09-28T10:44:54 PST" name="FlightsTab" finished-at="2020-09-28T10:44:54 PST" duration-ms="323" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- SearchByFlightNumber -->
-        <test-method is-config="true" signature="CloseTabs()[pri:0, instance:com.indra.pages.FlightStatusPage@25d250c6]" started-at="2020-09-28T10:26:10 PST" name="CloseTabs" finished-at="2020-09-28T10:26:11 PST" duration-ms="832" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- CloseTabs -->
-        <test-method is-config="true" signature="LaunchURL()[pri:0, instance:com.indra.pages.FlightStatusPage@25d250c6]" started-at="2020-09-28T10:26:11 PST" name="LaunchURL" finished-at="2020-09-28T10:26:22 PST" duration-ms="11061" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- LaunchURL -->
-        <test-method signature="SearchByDestination()[pri:2, instance:com.indra.pages.FlightStatusPage@25d250c6]" started-at="2020-09-28T10:26:22 PST" name="SearchByDestination" finished-at="2020-09-28T10:26:27 PST" duration-ms="5134" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- SearchByDestination -->
-        <test-method is-config="true" signature="CloseTabs()[pri:0, instance:com.indra.pages.FlightStatusPage@25d250c6]" started-at="2020-09-28T10:26:27 PST" name="CloseTabs" finished-at="2020-09-28T10:26:28 PST" duration-ms="846" status="PASS">
+        </test-method> <!-- FlightsTab -->
+        <test-method is-config="true" signature="CloseTabs()[pri:0, instance:com.indra.pages.AirAsiaHomePage@45b9a632]" started-at="2020-09-28T10:44:54 PST" name="CloseTabs" finished-at="2020-09-28T10:44:59 PST" duration-ms="4349" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CloseTabs -->
-        <test-method is-config="true" signature="ExitDriver()[pri:0, instance:com.indra.pages.FlightStatusPage@25d250c6]" started-at="2020-09-28T10:26:28 PST" name="ExitDriver" finished-at="2020-09-28T10:26:28 PST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="ExitDriver()[pri:0, instance:com.indra.pages.AirAsiaHomePage@45b9a632]" started-at="2020-09-28T10:44:59 PST" name="ExitDriver" finished-at="2020-09-28T10:44:59 PST" duration-ms="563" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ExitDriver -->
-      </class> <!-- com.indra.pages.FlightStatusPage -->
+      </class> <!-- com.indra.pages.AirAsiaHomePage -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

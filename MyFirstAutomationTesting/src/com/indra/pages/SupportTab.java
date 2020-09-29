@@ -16,7 +16,7 @@ import org.testng.annotations.Test;
 
 import com.indra.action.SupportAction;
 
-public class SupportPage {
+public class SupportTab {
 	WebDriver driver;
 	ChromeOptions options;
 	String baseURL = "https://www.airasia.com/en/gb";
@@ -44,7 +44,7 @@ public class SupportPage {
 	@Test(priority=1)
 	public void SupportPages() {
 		supportAction = new SupportAction(driver);
-		PageFactory.initElements(driver, SupportPage.this);
+		PageFactory.initElements(driver, SupportTab.this);
 		supportAction.Support();
 	}
 	

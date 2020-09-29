@@ -15,7 +15,7 @@ import org.testng.annotations.Test;
 
 import com.indra.action.LoginAction;
 
-public class LoginPage {
+public class LoginTab {
 	WebDriver driver;
 	ChromeOptions options;
 	String baseURL = "https://www.airasia.com/en/gb";
@@ -43,7 +43,7 @@ public class LoginPage {
 	@Test(priority = 0)
 	public void SignupPages() {
 		loginAction = new LoginAction(driver);
-		PageFactory.initElements(driver, LoginPage.class);
+		PageFactory.initElements(driver, LoginTab.class);
 		loginAction.SignUpAirasia("sample@gmail.com", "password123");
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 	}
@@ -51,7 +51,7 @@ public class LoginPage {
 	@Test(priority = 1)
 	public void LoginPages() {
 		loginAction = new LoginAction(driver);
-		PageFactory.initElements(driver, LoginPage.class);
+		PageFactory.initElements(driver, LoginTab.class);
 		loginAction.LoginAirasia("sample", "password123");
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 	}
@@ -59,7 +59,7 @@ public class LoginPage {
 	@Test(priority = 2)
 	public void ForgotPassword() {
 		loginAction = new LoginAction(driver);
-		PageFactory.initElements(driver, LoginPage.class);
+		PageFactory.initElements(driver, LoginTab.class);
 		loginAction.ForgotPassword();
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 	}
@@ -67,7 +67,7 @@ public class LoginPage {
 	@Test(priority = 3)
 	public void LoginAsFacebook() {
 		loginAction = new LoginAction(driver);
-		PageFactory.initElements(driver, LoginPage.class);
+		PageFactory.initElements(driver, LoginTab.class);
 		loginAction.LoginWithFacebook();
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 	}
@@ -75,7 +75,7 @@ public class LoginPage {
 	@Test(priority = 4)
 	public void LoginAsGoogle() {
 		loginAction = new LoginAction(driver);
-		PageFactory.initElements(driver, LoginPage.class);
+		PageFactory.initElements(driver, LoginTab.class);
 		loginAction.LoginWithGoogle();
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 	}
@@ -83,7 +83,7 @@ public class LoginPage {
 	@Test(priority = 5)
 	public void LoginAsWeChat() {
 		loginAction = new LoginAction(driver);
-		PageFactory.initElements(driver, LoginPage.class);
+		PageFactory.initElements(driver, LoginTab.class);
 		loginAction.LoginWithWeChat();
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 	}

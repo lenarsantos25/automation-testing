@@ -5,8 +5,6 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.indra.model.FlightStatusModel;
 
@@ -50,8 +48,4 @@ public class FlightStatusAction extends FlightStatusModel{
 		element.sendKeys(keys);
 	}
 	
-	private void WaitUntilTheElementIsVisible(WebElement element, int timeOut) {
-		WebDriverWait wait = new WebDriverWait(driver, timeOut);
-		wait.until(ExpectedConditions.visibilityOf(element));
-	}
 }

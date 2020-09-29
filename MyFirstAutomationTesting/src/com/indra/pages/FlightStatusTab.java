@@ -14,15 +14,15 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-import com.indra.action.TravelNoticesAndPromotionsAction;
+import com.indra.action.FlightStatusAction;
 
-public class TravelNoticesAndPromotionsPage {
+public class FlightStatusTab {
 	WebDriver driver;
 	ChromeOptions options;
 	String baseURL = "https://www.airasia.com/en/gb";
 	String path = "E:\\ChromeDriver\\chromedriver.exe";
 
-	TravelNoticesAndPromotionsAction tnpAction;
+	FlightStatusAction flightStatusAction;
 
 	@BeforeTest
 	public void Setup() {
@@ -41,13 +41,19 @@ public class TravelNoticesAndPromotionsPage {
 		driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
 	}
 
-	@Test(priority=1)
-	public void FirstPromotionPage() {
-		tnpAction = new TravelNoticesAndPromotionsAction(driver);
-		PageFactory.initElements(driver, TravelNoticesAndPromotionsPage.this);
-		tnpAction.FirstPromotion();
+	@Test(priority = 1)
+	public void SearchByFlightNumber() {
+		flightStatusAction = new FlightStatusAction(driver);
+		PageFactory.initElements(driver, FlightStatusTab.class);
+		flightStatusAction.SearchFlightNumber();
 	}
-	
+
+	@Test(priority=2)
+	public void SearchByDestination() {
+		flightStatusAction = new FlightStatusAction(driver);
+		PageFactory.initElements(driver, FlightStatusTab.class);
+		flightStatusAction.SearchByRoute();
+	}
 
 	@AfterMethod
 	public void CloseTabs() {
