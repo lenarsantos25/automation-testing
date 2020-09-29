@@ -35,11 +35,12 @@ public class AirAsiaHomeAction extends AirAsiaHomeModel {
 		ClickAction(checkInField);
 		ClickAction(checkInDate);
 		ClickAction(checkoutDate);
-		ClickAction(hotelsContainer);
+		ClickAction(confirmDate);
 		ClickAction(roomAdultComboBox);
 		ClickMultipleTimesAction(addAdult, 2);
 		ClickMultipleTimesAction(addChildren, 5);
 		ClickMultipleTimesAction(addInfant, 3);
+		ClickAction(addedDone);
 		ClickAction(searchButton);
 	}
 	

@@ -46,8 +46,8 @@ public class AirAsiaHomeModel {
 	@FindBy(xpath="(//div[contains(text(),'4')])[4]")
 	public WebElement checkoutDate;
 	
-	@FindBy(xpath="(//div[contains(@class,'r-1sp51qo')])[1]")
-	public WebElement hotelsContainer;
+	@FindBy(xpath="//div[contains(text(), 'Confirm')]")
+	public WebElement confirmDate;
 	
 	@FindBy(xpath="//div[contains(text(), '1 Room')]")
 	public WebElement roomAdultComboBox;
@@ -60,6 +60,9 @@ public class AirAsiaHomeModel {
 	
 	@FindBy(xpath="(//div[contains(text(), '+')])[3]")
 	public WebElement addInfant;
+	
+	@FindBy(xpath="//div[contains(text(), 'Done')]")
+	public WebElement addedDone;
 	
 	@FindBy(xpath="(//div[contains(text(), 'Search')])[1]")
 	public WebElement searchButton;
